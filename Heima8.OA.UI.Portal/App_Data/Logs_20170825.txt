@@ -1,0 +1,41 @@
+2017-08-25 08:50:43,187 [80] ERROR Demo - 工作流实例id是：260520e1-49ae-49b0-baeb-a33a56cc7525
+2017-08-25 08:50:43,251 [80] ERROR Demo - SetSetpActivity:产品设计
+2017-08-25 08:50:43,281 [80] ERROR Demo - 工作流停下来了
+2017-08-25 08:50:43,311 [80] ERROR Demo - 工作卸载进行持久化
+2017-08-25 08:50:43,341 [80] ERROR Demo - 工作流被卸载
+2017-08-25 08:51:10,160 [80] ERROR Demo - 工作流实例id是：260520e1-49ae-49b0-baeb-a33a56cc7525
+2017-08-25 08:51:10,190 [80] ERROR Demo - SetSetpActivity:小锯加工
+2017-08-25 08:51:10,220 [80] ERROR Demo - 工作流被卸载
+2017-08-25 08:51:37,583 [80] ERROR Demo - 工作流实例id是：260520e1-49ae-49b0-baeb-a33a56cc7525
+2017-08-25 08:51:37,613 [80] ERROR Demo - SetSetpActivity:封边加工
+2017-08-25 08:51:37,643 [80] ERROR Demo - 工作流被卸载
+2017-08-25 09:13:18,370 [80] ERROR Demo - 工作流实例id是：260520e1-49ae-49b0-baeb-a33a56cc7525
+2017-08-25 09:13:18,400 [80] ERROR Demo - SetSetpActivity:排钻加工
+2017-08-25 09:13:18,430 [80] ERROR Demo - 工作流被卸载
+2017-08-25 09:13:22,481 [80] ERROR Demo - System.Web.HttpException (0x80004005): Cannot redirect after HTTP headers have been sent.
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponseWrapper.Redirect(String url, Boolean endResponse)
+   at System.Web.Mvc.RedirectResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2017-08-25 13:57:07,391 [977] ERROR Demo - System.Web.HttpException (0x80004005): Cannot redirect after HTTP headers have been sent.
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponseWrapper.Redirect(String url, Boolean endResponse)
+   at System.Web.Mvc.RedirectResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2017-08-25 14:14:10,403 [977] ERROR Demo - 工作流实例id是：8ec7de9d-beb1-43e0-8eed-09e894440b83
+2017-08-25 14:14:10,464 [977] ERROR Demo - SetSetpActivity:产品设计
+2017-08-25 14:14:10,494 [977] ERROR Demo - 工作流停下来了
+2017-08-25 14:14:10,524 [977] ERROR Demo - 工作卸载进行持久化
+2017-08-25 14:14:10,644 [977] ERROR Demo - 工作流被卸载

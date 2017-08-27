@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="68fbfcd1-52c3-4a94-89d9-dc765c398b0c" name="Activity1" linkedPackageId="6fb05b3a-60a2-4dd8-b0f4-7a4f1b4c4c2d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="a992e1e8-db1f-437c-b3fb-20e8181c3c2e">
+      <elementDefinition Id="bba868a5-f764-402e-b680-8da13a47138d" />
+      <body>是否大于10块</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="13b48f73-a779-43c2-aac2-82d5b79e15bf">
+      <profileInstance Id="d4b178ec-4ba0-4c48-9d9b-519c987288d0" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1da27f18-b5ae-43a7-9131-1df81ef801ab">
+      <profileInstance Id="4b4df959-7cfa-4d66-99c0-25410d8d43bd" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="d868d7a9-0e33-4a56-b1a8-fde75ba00d41" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="c28eb759-8385-4d8d-870a-25b67611d0f2" />
+        <nodes>
+          <initialNode Id="a96b2943-1b6c-459e-9a66-e655c4baefa0" name="Initial1" isLeaf="false">
+            <elementDefinition Id="18c0f271-80f9-46ea-a189-315aa1509f8a" />
+            <flowNodeTargets>
+              <controlFlow Id="81c62367-487e-4991-b27e-b9a1e70a8981" isLeaf="false">
+                <opaqueActionMoniker Id="a5679f70-f53a-4cdf-af66-c916b54c5b33" LastKnownName="小杨提交申请洗脚资金" />
+                <elementDefinition Id="cbcbf9c8-e29a-4681-9f19-46f959478c36" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode Id="c2e7a391-3f92-4fee-9e9f-0125d559cee3" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="6232ef53-1008-4f4f-be79-7e26554c0bfc" />
+          </activityFinalNode>
+          <opaqueAction Id="a5679f70-f53a-4cdf-af66-c916b54c5b33" name="小杨提交申请洗脚资金" isLeaf="false">
+            <elementDefinition Id="fc8ebb76-5b62-49a8-beff-c8e5c8f23394" />
+            <flowNodeTargets>
+              <controlFlow Id="df886cf5-1d98-43bf-93f5-00533e1667b3" isLeaf="false">
+                <opaqueActionMoniker Id="1a4f0c38-bdb1-49ed-a568-ef846676a8e4" LastKnownName="总监审批" />
+                <elementDefinition Id="4ce06140-8038-4d24-8ef5-2a963ecf5d7d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="1a4f0c38-bdb1-49ed-a568-ef846676a8e4" name="总监审批" isLeaf="false">
+            <elementDefinition Id="4da21044-865c-4531-90d7-125269db02c0" />
+            <flowNodeTargets>
+              <controlFlow Id="0d15ab9f-1d24-4266-84d7-2328e200d8fc" isLeaf="false">
+                <decisionNodeMoniker Id="9f078dc2-bf4b-4667-b327-7b5c749a7618" LastKnownName="sss" />
+                <elementDefinition Id="53ec5609-4bfc-4338-91b2-f76585a5e40c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="07f8d79f-1a02-453e-ba4b-033be7f33a7f" name="老杨审批" isLeaf="false">
+            <elementDefinition Id="98012e11-5d9d-4834-9ca3-04b6209173a8" />
+            <flowNodeTargets>
+              <controlFlow Id="8dedde87-bae9-4bd3-b133-3b836c0282d8" isLeaf="false">
+                <activityFinalNodeMoniker Id="c2e7a391-3f92-4fee-9e9f-0125d559cee3" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="01b6274a-8173-4479-90e9-009113729070" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="9f078dc2-bf4b-4667-b327-7b5c749a7618" name="sss" isLeaf="false">
+            <description>如果&gt;10</description>
+            <elementDefinition Id="51eaaf7e-4713-4d69-93c8-b2909bdaef6c" />
+            <flowNodeTargets>
+              <controlFlow Id="b2ec7e86-9124-495a-aada-4849361163c0" guard="Y" isLeaf="false">
+                <opaqueActionMoniker Id="07f8d79f-1a02-453e-ba4b-033be7f33a7f" LastKnownName="老杨审批" />
+                <elementDefinition Id="48855534-47f6-4b47-98f6-b550d5ce1d0b" />
+              </controlFlow>
+              <controlFlow Id="950b79f0-ad32-475d-9633-0754d074016e" guard="N" isLeaf="false">
+                <activityFinalNodeMoniker Id="c2e7a391-3f92-4fee-9e9f-0125d559cee3" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="62a709db-d791-4e2d-9d24-686db9223bb3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="6fb05b3a-60a2-4dd8-b0f4-7a4f1b4c4c2d" name="ModelDemo">
+    <elementDefinition Id="50dc346c-8d1c-4037-9c38-da494d524026" />
+  </package>
+</activityRootModel>

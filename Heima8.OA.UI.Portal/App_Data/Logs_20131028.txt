@@ -1,0 +1,29 @@
+2013-10-28 09:12:54,030 [16] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.LoadUserMenu() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 32
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.Index() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2013-10-28 09:26:15,863 [16] ERROR Demo - 工作流实例id是：3c6f1850-ff0c-4319-acd6-39004a644e02
+2013-10-28 09:26:15,986 [16] ERROR Demo - SetSetpActivity:项目经理审批
+2013-10-28 09:26:16,113 [16] ERROR Demo - 工作流停下来了
+2013-10-28 09:26:16,144 [16] ERROR Demo - 工作卸载进行持久化
+2013-10-28 09:26:18,698 [16] ERROR Demo - 工作流被卸载
+2013-10-28 09:47:06,116 [16] ERROR Demo - 工作流实例id是：3c6f1850-ff0c-4319-acd6-39004a644e02
+2013-10-28 09:47:06,147 [16] ERROR Demo - SetSetpActivity:总监审批
+2013-10-28 09:47:06,335 [16] ERROR Demo - 工作流被卸载
+2013-10-28 09:53:40,310 [16] ERROR Demo - 工作流实例id是：3c6f1850-ff0c-4319-acd6-39004a644e02
+2013-10-28 09:53:40,341 [16] ERROR Demo - SetSetpActivity:财务审核
+2013-10-28 09:53:40,610 [16] ERROR Demo - 工作流被卸载

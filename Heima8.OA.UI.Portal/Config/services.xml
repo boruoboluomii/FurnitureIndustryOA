@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object name="ActionInfoService" type="Heima8.OA.BLL.ActionInfoService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="FileInfoService" type="Heima8.OA.BLL.FileInfoService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="MenuInfoService" type="Heima8.OA.BLL.MenuInfoService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="OrderInfoService" type="Heima8.OA.BLL.OrderInfoService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="R_UserInfo_ActionInfoService" type="Heima8.OA.BLL.R_UserInfo_ActionInfoService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="RoleInfoService" type="Heima8.OA.BLL.RoleInfoService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="UserInfoService" type="Heima8.OA.BLL.UserInfoService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="UserInfoExtService" type="Heima8.OA.BLL.UserInfoExtService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="WF_InstanceService" type="Heima8.OA.BLL.WF_InstanceService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="WF_StepService" type="Heima8.OA.BLL.WF_StepService, Heima8.OA.BLL" singleton="false" >
+  </object>
+
+  <object name="WF_TempService" type="Heima8.OA.BLL.WF_TempService, Heima8.OA.BLL" singleton="false" >
+  </object>
+</objects>

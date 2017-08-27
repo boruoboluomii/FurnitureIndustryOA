@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e0434c0c48ee4ababd0ab2019bc36fb7" Name="关系图1" >
+        <EntityTypeShape EntityType="DataModel.UserInfo" Width="1.5" PointX="0.875" PointY="1" />
+        <EntityTypeShape EntityType="DataModel.OrderInfo" Width="1.5" PointX="1.5" PointY="5" />
+        <AssociationConnector Association="DataModel.UserInfoOrderInfo" />
+        <EntityTypeShape EntityType="DataModel.RoleInfo" Width="1.5" PointX="4.625" PointY="4.25" />
+        <EntityTypeShape EntityType="DataModel.ActionInfo" Width="1.5" PointX="7.125" PointY="0.875" />
+        <AssociationConnector Association="DataModel.UserInfoRoleInfo" />
+        <AssociationConnector Association="DataModel.RoleInfoActionInfo" />
+        <EntityTypeShape EntityType="DataModel.R_UserInfo_ActionInfo" Width="2.5" PointX="3.75" PointY="0.5" />
+        <AssociationConnector Association="DataModel.UserInfoR_UserInfo_ActionInfo" />
+        <AssociationConnector Association="DataModel.ActionInfoR_UserInfo_ActionInfo" />
+        <EntityTypeShape EntityType="DataModel.UserInfoExt" Width="1.5" PointX="3.125" PointY="5.375" />
+        <EntityTypeShape EntityType="DataModel.MenuInfo" Width="1.5" PointX="7.25" PointY="4.875" />
+        <EntityTypeShape EntityType="DataModel.WF_Temp" Width="1.5" PointX="0.625" PointY="7.625" />
+        <EntityTypeShape EntityType="DataModel.WF_Instance" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DataModel.FileInfo" Width="1.5" PointX="3.625" PointY="11.875" />
+        <AssociationConnector Association="DataModel.WF_InstanceFileInfo" />
+        <AssociationConnector Association="DataModel.WF_TempWF_Instance" />
+        <EntityTypeShape EntityType="DataModel.WF_Step" Width="1.5" PointX="5.375" PointY="7.875" />
+        <AssociationConnector Association="DataModel.WF_InstanceWF_Step" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

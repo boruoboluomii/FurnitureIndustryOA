@@ -1,0 +1,88 @@
+﻿@using Heima8.OA.Model
+@model Heima8.OA.Model.WF_Instance
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    <link href="~/Content/tableStyle.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+    <link href="~/Content/kindeditor-4.0.5/themes/default/default.css" rel="stylesheet" />
+    <script src="~/Content/kindeditor-4.0.5/kindeditor.js"></script>
+    <script src="~/Content/kindeditor-4.0.5/lang/zh_CN.js"></script>
+    <script type="text/javascript">
+        var editor;
+        KindEditor.ready(function (K) {
+            editor = K.create('textarea[name="Content"]', {
+                resizeType: 1,
+                allowPreviewEmoticons: false,
+                allowImageUpload: false,
+                items: [
+                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                    'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+            });
+        });
+
+        function afetrAdd(data) {
+            if (data == "ok") {
+                alert("发起流程成功");
+            } else {
+                alert("发起失败！");
+            }
+        }
+    </script>
+</head>
+<body>
+    @{
+        WF_Temp temp = ViewBag.Temp;
+    }
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>流程类型：</td>
+                <td>@temp.TepName</td>
+            </tr>
+            <tr>
+                <td>流程描述</td>
+                <td>@Html.Raw(temp.Description)</td>
+            </tr>
+            <tr>
+                <td>流程名：</td>
+                <td>
+                    @Html.EditorFor(m => m.InstanceName)
+                </td>
+            </tr>
+            <tr>
+                <td>流转到：</td>
+                <td>
+                    @Html.DropDownList("flowTo")
+                </td>
+            </tr>
+            <tr>
+                <td>申请内容：</td>
+                <td>
+
+                    <textarea name="Content" style="width: 700px; height: 80px; visibility: hidden;">
+                    @temp.TempForm
+                </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="发起流程"/>
+                </td>
+            </tr>
+        </table>
+    }
+</body>
+</html>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5427E38B-ADF9-47BA-8485-A3BAAA87DCDB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Heima8.OA.BLL</RootNamespace>
+    <AssemblyName>Heima8.OA.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Services.cs">
+      <DependentUpon>Services.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="OrderInfoService.cs" />
+    <Compile Include="UserInfoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ActionInfoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Heima8.OA.DALFactory\Heima8.OA.DALFactory.csproj">
+      <Project>{82E51959-36F7-4CB3-9B14-45C7D07F89FA}</Project>
+      <Name>Heima8.OA.DALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heima8.OA.EFDAL\Heima8.OA.EFDAL.csproj">
+      <Project>{C35E0147-431E-433E-A62E-C7510C474E06}</Project>
+      <Name>Heima8.OA.EFDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heima8.OA.IBLL\Heima8.OA.IBLL.csproj">
+      <Project>{1FB7B99A-F568-4ADE-BB48-4FDE85536F25}</Project>
+      <Name>Heima8.OA.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heima8.OA.IDAL\Heima8.OA.IDAL.csproj">
+      <Project>{1F913F33-A348-41D0-B117-0412F5B9CA81}</Project>
+      <Name>Heima8.OA.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heima8.OA.Model\Heima8.OA.Model.csproj">
+      <Project>{8E5A850C-ECD7-4272-ABDD-0A5864033B6B}</Project>
+      <Name>Heima8.OA.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heima8.OA.NHDAL\Heima8.OA.NHDAL.csproj">
+      <Project>{FA791295-8588-4B07-9566-906E5F055998}</Project>
+      <Name>Heima8.OA.NHDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Services.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Services.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,185 @@
+2013-10-27 14:26:56,919 [7] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.LoadUserMenu() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 32
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.Index() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2013-10-27 14:27:06,568 [7] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.LoadUserMenu() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 32
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.Index() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2013-10-27 14:30:07,415 [6] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.LoadUserMenu() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 32
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.Index() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2013-10-27 14:35:46,478 [7] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.Workflow.SetStepActivity.Execute(CodeActivityContext context) 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.Workflow\SetStepActivity.cs:行号 35
+   在 System.Activities.CodeActivity.InternalExecute(ActivityInstance instance, ActivityExecutor executor, BookmarkManager bookmarkManager)
+   在 System.Activities.ActivityInstance.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+   在 System.Activities.Runtime.ActivityExecutor.ExecuteActivityWorkItem.ExecuteBody(ActivityExecutor executor, BookmarkManager bookmarkManager, Location resultLocation)
+2013-10-27 14:36:12,537 [7] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.LoadUserMenu() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 32
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.Index() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.InvokeSynchronousActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2013-10-27 14:39:23,866 [7] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.Workflow.SetStepActivity.Execute(CodeActivityContext context) 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.Workflow\SetStepActivity.cs:行号 34
+   在 System.Activities.CodeActivity.InternalExecute(ActivityInstance instance, ActivityExecutor executor, BookmarkManager bookmarkManager)
+   在 System.Activities.ActivityInstance.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+   在 System.Activities.Runtime.ActivityExecutor.ExecuteActivityWorkItem.ExecuteBody(ActivityExecutor executor, BookmarkManager bookmarkManager, Location resultLocation)
+2013-10-27 14:41:52,068 [7] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.Workflow.SetStepActivity.Execute(CodeActivityContext context) 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.Workflow\SetStepActivity.cs:行号 34
+   在 System.Activities.CodeActivity.InternalExecute(ActivityInstance instance, ActivityExecutor executor, BookmarkManager bookmarkManager)
+   在 System.Activities.ActivityInstance.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+   在 System.Activities.Runtime.ActivityExecutor.ExecuteActivityWorkItem.ExecuteBody(ActivityExecutor executor, BookmarkManager bookmarkManager, Location resultLocation)
+2013-10-27 14:46:37,012 [31] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.LoadUserMenu() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 32
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.Index() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2013-10-27 14:46:54,932 [31] ERROR Demo - SetSetpActivity:项目经理审批
+2013-10-27 14:46:54,964 [31] ERROR Demo - 工作流停下来了
+2013-10-27 14:46:54,964 [31] ERROR Demo - 工作卸载进行持久化
+2013-10-27 14:46:55,534 [31] ERROR Demo - 工作流被卸载
+2013-10-27 14:47:04,098 [31] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.Workflow.SetStepActivity.Execute(CodeActivityContext context) 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.Workflow\SetStepActivity.cs:行号 34
+   在 System.Activities.CodeActivity.InternalExecute(ActivityInstance instance, ActivityExecutor executor, BookmarkManager bookmarkManager)
+   在 System.Activities.ActivityInstance.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+   在 System.Activities.Runtime.ActivityExecutor.ExecuteActivityWorkItem.ExecuteBody(ActivityExecutor executor, BookmarkManager bookmarkManager, Location resultLocation)
+2013-10-27 14:47:04,409 [31] ERROR Demo - 工作流被卸载
+2013-10-27 14:53:27,712 [9] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.LoadUserMenu() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 32
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.Index() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2013-10-27 14:53:45,368 [9] ERROR Demo - 工作流实例id是：a0e4379d-902b-4d2c-a23f-f920ec97a2bc
+2013-10-27 14:53:45,493 [9] ERROR Demo - SetSetpActivity:项目经理审批
+2013-10-27 14:53:45,524 [9] ERROR Demo - 工作流停下来了
+2013-10-27 14:53:45,555 [9] ERROR Demo - 工作卸载进行持久化
+2013-10-27 14:53:46,101 [9] ERROR Demo - 工作流被卸载
+2013-10-27 14:54:21,464 [9] ERROR Demo - 工作流实例id是：45fbcf2d-eaf8-4a98-bc54-8681ca40d3db
+2013-10-27 14:54:21,495 [9] ERROR Demo - SetSetpActivity:项目经理审批
+2013-10-27 14:54:21,526 [9] ERROR Demo - 工作流停下来了
+2013-10-27 14:54:21,526 [9] ERROR Demo - 工作卸载进行持久化
+2013-10-27 14:54:21,843 [9] ERROR Demo - 工作流被卸载
+2013-10-27 14:57:30,938 [9] ERROR Demo - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.LoadUserMenu() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 32
+   在 Heima8.OA.UI.Portal.Controllers.HomeController.Index() 位置 f:\NetClass\黑马8期\2013年10月16日 T4模板 源代码管理 日志处理\代码\Heima8.OA\Heima8.OA.UI.Portal\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2013-10-27 14:58:06,345 [9] ERROR Demo - 工作流实例id是：a6780b29-823a-4b5e-82b5-234a1d8a0289
+2013-10-27 14:58:06,451 [9] ERROR Demo - SetSetpActivity:项目经理审批
+2013-10-27 14:58:06,492 [9] ERROR Demo - 工作流停下来了
+2013-10-27 14:58:06,492 [9] ERROR Demo - 工作卸载进行持久化
+2013-10-27 14:58:07,056 [9] ERROR Demo - 工作流被卸载
+2013-10-27 14:58:14,620 [9] ERROR Demo - 工作流实例id是：c1483d88-8257-4d2d-b35e-da48d0e8be38
+2013-10-27 14:58:14,651 [9] ERROR Demo - SetSetpActivity:项目经理审批
+2013-10-27 14:58:14,724 [9] ERROR Demo - 工作流停下来了
+2013-10-27 14:58:14,724 [9] ERROR Demo - 工作卸载进行持久化
+2013-10-27 14:58:15,022 [9] ERROR Demo - 工作流被卸载
+2013-10-27 14:58:25,545 [9] ERROR Demo - 工作流实例id是：ab21bcf6-4701-4048-94f0-7ed39e359e70
+2013-10-27 14:58:25,576 [9] ERROR Demo - SetSetpActivity:项目经理审批
+2013-10-27 14:58:25,607 [9] ERROR Demo - 工作流停下来了
+2013-10-27 14:58:25,607 [9] ERROR Demo - 工作卸载进行持久化
+2013-10-27 14:58:25,936 [9] ERROR Demo - 工作流被卸载
+2013-10-27 14:58:38,169 [9] ERROR Demo - 工作流实例id是：ab21bcf6-4701-4048-94f0-7ed39e359e70
+2013-10-27 14:58:38,200 [9] ERROR Demo - SetSetpActivity:总监审批
+2013-10-27 14:58:38,333 [9] ERROR Demo - 工作流被卸载
+2013-10-27 14:58:47,605 [9] ERROR Demo - 工作流实例id是：ab21bcf6-4701-4048-94f0-7ed39e359e70
+2013-10-27 14:58:47,636 [9] ERROR Demo - SetSetpActivity:财务审核
+2013-10-27 14:58:47,768 [9] ERROR Demo - 工作流被卸载
