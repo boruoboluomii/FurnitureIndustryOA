@@ -57,7 +57,7 @@
             </tr>
             <tr>
                 <td>申请人：</td>
-                <td>@Model.StartBy</td>
+                <td>@userInfoService.GetEntities(u => u.ID == Model.StartBy).FirstOrDefault().ShowName</td>
             </tr>
             <tr>
                 <td>申请时间：</td>

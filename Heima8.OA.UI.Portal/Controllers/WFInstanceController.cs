@@ -99,15 +99,15 @@ namespace Heima8.OA.UI.Portal.Controllers
             instance.WFInstanceId = Guid.Empty;
             instance.WF_TempID = id;
             WF_InstanceService.Add(instance);
-
-
             //第二点：启动工作流
 //            var wfApp = WorkflowApplicationHelper.CreateWorkflowApp(new FincalActivity(), null);
-
+            var role =
+                RoleInfoService.GetEntities(r => r.DelFlag == delflagNormal && r.RoleName.Contains("设计"))
+                    .FirstOrDefault();
             var wfApp = WorkflowApplicationHelper.CreateWorkflowApp(new ProductFlow(), 
                 new Dictionary<string, object>()
                 {
-                     {"AfterDesignFlowTo",GetRoleHelper.TypeDictionary[instance.WF_TempID]}
+                     {"AfterDesignFlowTo",GetRoleHelper.GetFlowToRoleKeyWord(role ,id)}
                 });
             instance.WFInstanceId = wfApp.Id;
             WF_InstanceService.Update(instance);
@@ -176,7 +176,7 @@ namespace Heima8.OA.UI.Portal.Controllers
 
             return View(data);
         }
-
+        
         public ActionResult ShowMyChecked()
         {
             var runEnum = (short)Heima8.OA.Model.Enum.WFStepEnum.UnProecess;

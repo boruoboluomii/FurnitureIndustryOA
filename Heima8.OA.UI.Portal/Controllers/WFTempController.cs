@@ -67,18 +67,6 @@ namespace Heima8.OA.UI.Portal.Controllers
             temp.SubTime = DateTime.Now;
             WF_TempService.Add(temp);
 
-            if (temp.Remark.Contains("小锯"))
-            {
-                Heima8.OA.Workflow.GetRoleHelper.TypeDictionary.Add(temp.ID, "小锯");
-            }else if (temp.Remark.Contains("数控"))
-            {
-                Heima8.OA.Workflow.GetRoleHelper.TypeDictionary.Add(temp.ID, "数控");
-            }
-            else
-            {
-                //todo 需要验证
-
-            }
             return Content("ok");
         }
         #endregion

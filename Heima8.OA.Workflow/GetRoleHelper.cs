@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Heima8.OA.BLL;
 using Heima8.OA.IBLL;
 using Heima8.OA.Model;
 using Spring.Context;
@@ -33,11 +34,25 @@ namespace Heima8.OA.Workflow
             }
             if (roleInfo.RoleName.Contains("设计"))
             {
-//                if (_typeDictionary.ContainsKey(tempId))
-//                {
-//                    return 
-//                }
-                return _typeDictionary[tempId];
+                short normalFlag = (short)Heima8.OA.Model.Enum.DelFlagEnum.Normal;
+
+                IApplicationContext ctx = ContextRegistry.GetContext();
+                var wF_TempService = ctx.GetObject("WF_TempService") as WF_TempService;
+                var temp = wF_TempService.GetEntities(t => t.DelFlag == normalFlag && t.ID == tempId).FirstOrDefault();
+                if (temp != null && "小锯".Contains(temp.Remark))
+                {
+                    return "小锯";
+                }
+                else if (temp != null && "数控".Contains(temp.Remark))
+                {
+                    return "数控";
+                }
+                else
+                {
+                    //todo 需要验证
+
+                }
+                return null;
             }
             if (roleInfo.RoleName.Contains("小锯"))
             {
@@ -60,13 +75,6 @@ namespace Heima8.OA.Workflow
                 return "包装";
             }
             return null;
-        }
-
-        private static Dictionary<int, string> _typeDictionary = new Dictionary<int, string>();
-
-        public static Dictionary<int, string> TypeDictionary
-        {
-            get { return _typeDictionary; }
         }
     }
 }
