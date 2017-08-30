@@ -1,4 +1,7 @@
-﻿@model Heima8.OA.Model.WF_Instance
+﻿@using Heima8.OA.BLL
+@using Spring.Context
+@using Spring.Context.Support
+@model Heima8.OA.Model.WF_Instance
 
 @{
     Layout = null;
@@ -10,6 +13,11 @@
 <head>
     <title>ShowInstance</title>
     <link href="../../Content/tableStyle.css" rel="stylesheet" />
+    @{
+        var stempStatus = (short)Heima8.OA.Model.Enum.WFStepEnum.UnProecess;
+        IApplicationContext ctx = ContextRegistry.GetContext();
+        var userInfoService = ctx.GetObject("UserInfoService") as UserInfoService;
+    }
 </head>
 <body>
     <div>
@@ -21,7 +29,10 @@
                 <td>模板类型：</td><td>@Model.WF_Temp.TepName</td>
             </tr>
             <tr>
-                <td>申请人：</td><td>@Model.StartBy</td>
+                <td>申请人：</td><td>
+                                 @userInfoService.GetEntities(u => u.ID == Model.StartBy).FirstOrDefault().ShowName
+@*                                 @Model.StartBy*@
+                             </td>
             </tr>
             <tr>
                 <td>申请时间：</td><td>@Model.StartTime</td>
@@ -35,7 +46,7 @@
                                   {
                                       <p>
                                           审批节点：@item.StepName<br />
-                                          审批人：@item.ProcessBy<br/>
+                                          审批人：@userInfoService.GetEntities(u => u.ID == item.ProcessBy).FirstOrDefault().ShowName<br/>
                                           审批时间：@item.SubTime<br/>
                                           审批结果：@Html.Raw(string.IsNullOrEmpty(item.ProcessResult)?"正在审批中...":item.ProcessResult)<br />
                                           审批意见：@item.PorcessComment

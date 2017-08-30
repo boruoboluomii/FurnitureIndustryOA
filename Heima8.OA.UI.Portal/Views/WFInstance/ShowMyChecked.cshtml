@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Heima8.OA.Model.WF_Instance>
+﻿@using Heima8.OA.BLL
+@using Spring.Context
+@using Spring.Context.Support
+@model IEnumerable<Heima8.OA.Model.WF_Instance>
 @{
     Layout = null;
 }
@@ -9,6 +12,11 @@
 <head>
     <title>ShowMyCheck</title>
     <link href="../../Content/tableStyle.css" rel="stylesheet" />
+    @{
+        var stempStatus = (short)Heima8.OA.Model.Enum.WFStepEnum.UnProecess;
+        IApplicationContext ctx = ContextRegistry.GetContext();
+        var userInfoService = ctx.GetObject("UserInfoService") as UserInfoService;
+    }
 </head>
 <body>
 
@@ -41,7 +49,8 @@
                 </td>
                
                 <td>
-                    @Html.DisplayFor(modelItem => item.StartBy)
+@*                    @Html.DisplayFor(modelItem => item.StartBy)*@
+                    @userInfoService.GetEntities(u => u.ID == item.StartBy).FirstOrDefault().ShowName
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.StartTime)

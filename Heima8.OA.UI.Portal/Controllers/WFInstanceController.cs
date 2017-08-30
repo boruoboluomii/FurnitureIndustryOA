@@ -152,6 +152,7 @@ namespace Heima8.OA.UI.Portal.Controllers
 
        
         #region 我的审批流程
+        //我申请、发起的流程
         public ActionResult ShowMyCheck()
         {
             var data = WF_InstanceService.GetEntities(i => i.StartBy == LoginUser.ID).ToList();
