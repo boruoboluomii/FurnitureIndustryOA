@@ -156,7 +156,7 @@
         function editEvent(id) {
 
             //给editFrame  的src属性做一个赋值
-            $("#editFrame").attr("src", "/ActionInfo/Edit/" + id);
+            $("#editFrame").attr("src", "/WFTemp/Edit/" + id);
 
             $("#editDialogDiv").css("display", "block");
             $("#editDialogDiv").dialog({
@@ -173,7 +173,9 @@
                     text: '修改',
                     iconCls: 'icon-ok',
                     handler: function () {
+//                        $("#editFrame form").submit();
                         $("#editFrame")[0].contentWindow.submitForm();
+//                        $("#form0").submit();
                     }
                 }, {
                     id: 'btnCancel',
@@ -209,7 +211,7 @@
             //ids:     1,2,       4,5,6,
             ids = ids.substr(0, ids.length - 1);
 
-            $.post("/ActionInfo/Delete", { ids: ids }, function (data) {
+            $.post("/WFTemp/Delete", { ids: ids }, function (data) {
                 if (data == "ok") {
                     //刷新表格
                     initTable();

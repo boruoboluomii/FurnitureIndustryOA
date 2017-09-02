@@ -1692,6 +1692,7 @@
     <Content Include="Views\WFInstance\ShowInstance.cshtml" />
     <Content Include="Views\WFInstance\ShowMyUnCheck.cshtml" />
     <Content Include="Views\WFInstance\ShowMyChecked.cshtml" />
+    <Content Include="Views\WFTemp\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
