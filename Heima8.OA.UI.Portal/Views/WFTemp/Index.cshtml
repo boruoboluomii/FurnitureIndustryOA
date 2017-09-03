@@ -148,6 +148,10 @@
                         editEvent($(this).attr("uid"));
                         return false;
                     });
+                    $(".deletLink").click(function () {//
+                        deleteOneEvent($(this).attr("uid"));
+                        return false;
+                    });
                 }
             });
         }
@@ -220,6 +224,18 @@
                 }
             });
 
+        }
+        
+        //删除一条数据旁边的链接被点击的时候执行。
+        function deleteOneEvent(id) {
+            $.post("/WFTemp/Delete", { ids: id }, function (data) {
+                if (data == "ok") {
+                    //刷新表格
+                    initTable();
+                } else {
+                    $.messager.alert("提醒消息", "败了", "error");
+                }
+            });
         }
 
         //由子容器调用的方法

@@ -154,15 +154,18 @@
                         editEvent($(this).attr("uid"));
                         return false;
                     });
+                    $(".deletLink").click(function () {//
+                        deleteOneEvent($(this).attr("uid"));
+                        return false;
+                    });
                 }
             });
         }
-
         //修改
         function editEvent(id) {
 
             //给editFrame  的src属性做一个赋值
-            $("#editFrame").attr("src", "/ActionInfo/Edit/" + id);
+            $("#editFrame").attr("src", "/RoleInfo/Edit/" + id);
 
             $("#editDialogDiv").css("display", "block");
             $("#editDialogDiv").dialog({
@@ -215,7 +218,7 @@
             //ids:     1,2,       4,5,6,
             ids = ids.substr(0, ids.length - 1);
 
-            $.post("/ActionInfo/Delete", { ids: ids }, function (data) {
+            $.post("/RoleInfo/Delete", { ids: ids }, function (data) {
                 if (data == "ok") {
                     //刷新表格
                     initTable();
@@ -225,7 +228,17 @@
             });
 
         }
-
+        //删除一条数据旁边的链接被点击的时候执行。
+        function deleteOneEvent(id) {
+            $.post("/RoleInfo/Delete", { ids: id }, function (data) {
+                if (data == "ok") {
+                    //刷新表格
+                    initTable();
+                } else {
+                    $.messager.alert("提醒消息", "败了", "error");
+                }
+            });
+        }
         //当角色点击添加时候，弹出一个添加的对话框
         function addClickEvent() {
             $("#addDialogDiv").css("display", "block");

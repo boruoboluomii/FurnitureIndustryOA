@@ -134,6 +134,10 @@
                         editEvent($(this).attr("uid"));
                         return false;
                     });
+                    $(".deletLink").click(function () {//
+                        deleteOneEvent($(this).attr("uid"));
+                        return false;
+                    });
                 }
             });
         }
@@ -274,6 +278,17 @@
                 }
             });
 
+        }
+        //删除一条数据旁边的链接被点击的时候执行。
+        function deleteOneEvent(id) {
+            $.post("/UserInfo/Delete", { ids: id }, function (data) {
+                if (data == "ok") {
+                    //刷新表格
+                    initTable();
+                } else {
+                    $.messager.alert("提醒消息", "败了", "error");
+                }
+            });
         }
 
         //当用户点击添加时候，弹出一个添加的对话框
