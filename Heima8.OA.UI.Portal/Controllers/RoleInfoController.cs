@@ -63,7 +63,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         #region 修改
         public ActionResult Edit(int id)
         {
-            ViewData.Model = RoleInfoService.GetEntities(u => u.ID == id).FirstOrDefault();
+            ViewData.Model = RoleInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
             return View();
         }
 

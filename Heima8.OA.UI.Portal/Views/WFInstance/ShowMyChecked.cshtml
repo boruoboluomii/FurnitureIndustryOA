@@ -1,4 +1,5 @@
 ﻿@using Heima8.OA.BLL
+@using Heima8.OA.Model
 @using Spring.Context
 @using Spring.Context.Support
 @model IEnumerable<Heima8.OA.Model.WF_Instance>
@@ -50,7 +51,7 @@
                
                 <td>
 @*                    @Html.DisplayFor(modelItem => item.StartBy)*@
-                    @userInfoService.GetEntities(u => u.ID == item.StartBy).FirstOrDefault().ShowName
+                    @userInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == item.StartBy).FirstOrDefault().ShowName
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.StartTime)

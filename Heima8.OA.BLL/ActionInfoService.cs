@@ -22,10 +22,10 @@ namespace Heima8.OA.BLL
 
         public bool SetRole(int userId, List<int> roleIds)
         {
-            var actionInfo = DbSession.ActionInfoDal.GetEntities(u => u.ID == userId).FirstOrDefault();
+            var actionInfo = DbSession.ActionInfoDal.GetEntities(u => u.ID == userId && u.DelFlag == DeleteFlag.DelflagNormal).FirstOrDefault();
             actionInfo.RoleInfo.Clear();//全剁掉。
 
-            var allRoles = DbSession.RoleInfoDal.GetEntities(r => roleIds.Contains(r.ID));
+            var allRoles = DbSession.RoleInfoDal.GetEntities(r =>r.DelFlag == DeleteFlag.DelflagNormal && roleIds.Contains(r.ID));
             foreach (var roleInfo in allRoles)
             {
                 actionInfo.RoleInfo.Add(roleInfo);//加最新的角色。

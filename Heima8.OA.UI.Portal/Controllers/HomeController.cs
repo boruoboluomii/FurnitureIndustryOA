@@ -34,7 +34,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         {
             //拿到当前用户
             int userId = this.LoginUser.ID;
-            var user = UserInfoService.GetEntities(u => u.ID == userId).FirstOrDefault();
+            var user = UserInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == userId).FirstOrDefault();
             //拿到当前用户所有的权限【必须是菜单类型权限。】
             var allRole = user.RoleInfo;
 

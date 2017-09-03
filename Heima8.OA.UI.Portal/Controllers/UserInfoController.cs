@@ -108,7 +108,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         #region 修改
         public ActionResult Edit(int id)
         {
-            ViewData.Model = UserInfoService.GetEntities(u => u.ID == id).FirstOrDefault();
+            ViewData.Model = UserInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
             return View();
         }
 
@@ -167,11 +167,11 @@ namespace Heima8.OA.UI.Portal.Controllers
         {
             //当前要设置角色的用户
             int userId = id;
-            
-            UserInfo  user= UserInfoService.GetEntities(u => u.ID == id).FirstOrDefault();
+
+            UserInfo user = UserInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
 
             //把所有的角色发送 到前台
-            ViewBag.AllRoles = RoleInfoService.GetEntities(u => u.DelFlag == delflagNormal).ToList();
+            ViewBag.AllRoles = RoleInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.DelFlag == delflagNormal).ToList();
 
             //用户已经关联的角色发送到前台。
             ViewBag.ExitsRoles = (from r in user.RoleInfo
@@ -206,7 +206,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         #region 设置特殊权限
         public ActionResult SetAction(int id)
         {
-            ViewBag.User = UserInfoService.GetEntities(u => u.ID == id).FirstOrDefault();
+            ViewBag.User = UserInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
 
             ViewData.Model = ActionInfoService.GetEntities(a => a.DelFlag == delflagNormal).ToList();
 
@@ -217,7 +217,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         public ActionResult DeleteUserAction(int UId, int ActionId)
         {
 
-            var rUserAction= R_UserInfo_ActionInfoService.GetEntities(r => r.ActionInfoID == ActionId && r.UserInfoID == UId)
+            var rUserAction = R_UserInfo_ActionInfoService.GetEntities(r => r.DelFlag == DeleteFlag.DelflagNormal && r.ActionInfoID == ActionId && r.UserInfoID == UId)
                                         .FirstOrDefault();
             if (rUserAction != null)
             {

@@ -35,7 +35,7 @@ namespace Heima8.OA.UnitTest
                     });
             }
 
-            IQueryable<UserInfo> temp = dal.GetEntities(u => u.UName.Contains("ss"));
+            IQueryable<UserInfo> temp = dal.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.UName.Contains("ss"));
 
             //断言
             Assert.AreEqual(true,temp.Count()>=10);

@@ -1,4 +1,5 @@
 ﻿@using Heima8.OA.BLL
+@using Heima8.OA.Model
 @using Spring.Context
 @using Spring.Context.Support
 @model Heima8.OA.Model.WF_Instance
@@ -30,7 +31,7 @@
             </tr>
             <tr>
                 <td>申请人：</td><td>
-                                 @userInfoService.GetEntities(u => u.ID == Model.StartBy).FirstOrDefault().ShowName
+                                 @userInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == Model.StartBy).FirstOrDefault().ShowName
 @*                                 @Model.StartBy*@
                              </td>
             </tr>
@@ -46,7 +47,7 @@
                                   {
                                       <p>
                                           审批节点：@item.StepName<br />
-                                          审批人：@userInfoService.GetEntities(u => u.ID == item.ProcessBy).FirstOrDefault().ShowName<br/>
+                                          审批人：@userInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == item.ProcessBy).FirstOrDefault().ShowName<br/>
                                           审批时间：@item.SubTime<br/>
                                           审批结果：@Html.Raw(string.IsNullOrEmpty(item.ProcessResult)?"正在审批中...":item.ProcessResult)<br />
                                           审批意见：@item.PorcessComment

@@ -96,7 +96,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         #region 修改
         public ActionResult Edit(int id)
         {
-            ViewData.Model = ActionInfoService.GetEntities(u => u.ID == id).FirstOrDefault();
+            ViewData.Model = ActionInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
             return View();
         }
 
@@ -128,7 +128,7 @@ namespace Heima8.OA.UI.Portal.Controllers
             //当前要设置角色的用户
             int userId = id;
 
-            ActionInfo actionInfo = ActionInfoService.GetEntities(u => u.ID == id).FirstOrDefault();
+            ActionInfo actionInfo = ActionInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
 
             //把所有的角色发送 到前台
             ViewBag.AllRoles = RoleInfoService.GetEntities(u => u.DelFlag == delflagNormal).ToList();

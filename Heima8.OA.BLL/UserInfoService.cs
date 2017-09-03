@@ -93,10 +93,10 @@ namespace Heima8.OA.BLL
 
         public bool SetRole(int userId, List<int> roleIds)
         {
-            var user = DbSession.UserInfoDal.GetEntities(u => u.ID == userId).FirstOrDefault();
+            var user = DbSession.UserInfoDal.GetEntities(u =>u.DelFlag == DeleteFlag.DelflagNormal && u.ID == userId).FirstOrDefault();
             user.RoleInfo.Clear();//全剁掉。
 
-            var allRoles = DbSession.RoleInfoDal.GetEntities(r => roleIds.Contains(r.ID));
+            var allRoles = DbSession.RoleInfoDal.GetEntities(r => r.DelFlag == DeleteFlag.DelflagNormal && roleIds.Contains(r.ID));
             foreach (var roleInfo in allRoles)
             {
                 user.RoleInfo.Add(roleInfo);//加最新的角色。

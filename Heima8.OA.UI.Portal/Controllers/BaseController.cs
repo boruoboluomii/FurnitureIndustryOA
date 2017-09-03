@@ -96,7 +96,7 @@ namespace Heima8.OA.UI.Portal.Controllers
 
 
                 var actionInfo =//拿到当前请求对应的权限数据
-                actionInfoService.GetEntities(a => a.Url.ToLower() == url && a.HttpMethd.ToLower() == httpMethod)
+                actionInfoService.GetEntities(a => a.DelFlag == DeleteFlag.DelflagNormal && a.Url.ToLower() == url && a.HttpMethd.ToLower() == httpMethod)
                                  .FirstOrDefault();
 
                 if (actionInfo == null)
@@ -106,7 +106,7 @@ namespace Heima8.OA.UI.Portal.Controllers
 
 
                 //一号线 
-                var rUAs= rUserInfoActionInfoService.GetEntities(u => u.UserInfoID == LoginUser.ID);
+                var rUAs = rUserInfoActionInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.UserInfoID == LoginUser.ID);
 
                 var item = (from a in rUAs
                             where a.ActionInfoID == actionInfo.ID
@@ -125,7 +125,7 @@ namespace Heima8.OA.UI.Portal.Controllers
 
 
                 //2号
-                var user= UserInfoService.GetEntities(u => u.ID == LoginUser.ID).FirstOrDefault();
+                var user = UserInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == LoginUser.ID).FirstOrDefault();
                 //拿到所有的角色
                 var allRoles = from r in user.RoleInfo
                                select r;

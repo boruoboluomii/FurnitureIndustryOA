@@ -75,7 +75,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         public ActionResult StartWF()
         {
 
-            ViewData.Model = WF_TempService.GetEntities(u => true).ToList();
+            ViewData.Model = WF_TempService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal).ToList();
 
             return View();
         }
@@ -106,7 +106,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         #region 修改
         public ActionResult Edit(int id)
         {
-            ViewData.Model = WF_TempService.GetEntities(u => u.ID == id).FirstOrDefault();
+            ViewData.Model = WF_TempService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
             return View();
         }
 

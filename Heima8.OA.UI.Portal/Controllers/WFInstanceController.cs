@@ -31,7 +31,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         public ActionResult Add(int id)
         {
 
-            var temp = WF_TempService.GetEntities(u => u.ID == id).FirstOrDefault();
+            var temp = WF_TempService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
             ViewBag.Temp = temp;
            
             
@@ -173,7 +173,7 @@ namespace Heima8.OA.UI.Portal.Controllers
                                select s.WF_InstanceID).Distinct();
             //流程实例的id拿到所有的流程。
             var data = WF_InstanceService.GetEntities(
-                i => instanceIds.Contains(i.ID) && i.Status == instanceEnum).ToList();
+                i => i.DelFlag == DeleteFlag.DelflagNormal && instanceIds.Contains(i.ID) && i.Status == instanceEnum).ToList();
 
             return View(data);
         }
@@ -188,7 +188,7 @@ namespace Heima8.OA.UI.Portal.Controllers
 
             var instanceIds = (from s in steps
                                select s.WF_InstanceID).Distinct();
-            var data = WF_InstanceService.GetEntities(i => instanceIds.Contains(i.ID)).ToList();
+            var data = WF_InstanceService.GetEntities(i => i.DelFlag == DeleteFlag.DelflagNormal && instanceIds.Contains(i.ID)).ToList();
 
             return View(data);
         }
@@ -197,7 +197,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         #region 详情
         public ActionResult ShowInstance(int id)
         {
-            ViewData.Model = WF_InstanceService.GetEntities(u => u.ID == id).FirstOrDefault();
+            ViewData.Model = WF_InstanceService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
             return View();
         }
         #endregion
@@ -205,7 +205,7 @@ namespace Heima8.OA.UI.Portal.Controllers
         #region 审批
         public ActionResult ShowCheck(int id)
         {
-            var instance = WF_InstanceService.GetEntities(u => u.ID == id).FirstOrDefault();
+            var instance = WF_InstanceService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == id).FirstOrDefault();
 
             ViewData.Model = instance;
 //            ViewData["flowTo"] =
@@ -222,7 +222,7 @@ namespace Heima8.OA.UI.Portal.Controllers
             }
             else
             {
-                ViewData["flowTo"] = UserInfoService.GetEntities(u => u.DelFlag == delflagNormal).ToList()
+                ViewData["flowTo"] = UserInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.DelFlag == delflagNormal).ToList()
                     .Select(u => new SelectListItem() { Selected = false, Text = u.UName, Value = u.ID.ToString() });
             }
             return View();

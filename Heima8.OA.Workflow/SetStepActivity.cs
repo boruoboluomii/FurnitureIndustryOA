@@ -31,7 +31,7 @@ namespace Heima8.OA.Workflow
             var WF_InstanceService = ctx.GetObject("WF_InstanceService") as IWF_InstanceService;
             var WF_StepService = ctx.GetObject("WF_StepService") as IWF_StepService;
 
-            var inst = WF_InstanceService.GetEntities(w => w.WFInstanceId == insId).FirstOrDefault();
+            var inst = WF_InstanceService.GetEntities(w => w.DelFlag == DeleteFlag.DelflagNormal && w.WFInstanceId == insId).FirstOrDefault();
 
             if (inst == null)
             {
