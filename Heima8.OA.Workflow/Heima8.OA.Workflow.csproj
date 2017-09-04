@@ -67,6 +67,7 @@
     <Compile Include="SetStepActivity.cs" />
     <Compile Include="Wait4InputDataActivity.cs" />
     <Compile Include="WorkflowApplicationHelper.cs" />
+    <Compile Include="WorkflowFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <XamlAppDef Include="FincalActivity.xaml">

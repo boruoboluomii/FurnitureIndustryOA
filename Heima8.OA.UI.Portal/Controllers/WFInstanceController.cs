@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Activities;
 using System.Activities.Statements;
 using System.Collections.Generic;
 using System.Data;
@@ -9,6 +10,8 @@ using System.Web.Mvc;
 using Heima8.OA.IBLL;
 using Heima8.OA.Model;
 using Heima8.OA.Workflow;
+using Spring.Context;
+using Spring.Context.Support;
 
 namespace Heima8.OA.UI.Portal.Controllers
 {
@@ -100,11 +103,12 @@ namespace Heima8.OA.UI.Portal.Controllers
             instance.WF_TempID = id;
             WF_InstanceService.Add(instance);
             //第二点：启动工作流
-//            var wfApp = WorkflowApplicationHelper.CreateWorkflowApp(new FincalActivity(), null);
             var role =
                 RoleInfoService.GetEntities(r => r.DelFlag == delflagNormal && r.RoleName.Contains("设计"))
                     .FirstOrDefault();
-            var wfApp = WorkflowApplicationHelper.CreateWorkflowApp(new ProductFlow(), 
+            var temp = GetWfTemp(instance);
+            var activity = WorkflowFactory.GetActivity(temp.ActityType);
+            var wfApp = WorkflowApplicationHelper.CreateWorkflowApp(activity, 
                 new Dictionary<string, object>()
                 {
                      {"AfterDesignFlowTo",GetRoleHelper.GetFlowToRoleKeyWord(role ,id)}
@@ -269,17 +273,28 @@ namespace Heima8.OA.UI.Portal.Controllers
 
             //让书签继续往下执行。
             var Value = isPass ? 1 : 0;
+            var instance = GetWfInstance(step);
+            var temp = GetWfTemp(instance);
+            var activity = WorkflowFactory.GetActivity(temp.ActityType);
 
             Heima8.OA.Workflow.WorkflowApplicationHelper.ResumeBookMark(
-//                new FincalActivity(),
-                new ProductFlow(), 
+                activity, 
                 step.WF_Instance.WFInstanceId,
                 step.StepName,
                 Value);
             return Content("ok");
         }
         #endregion
-     
 
+        public WF_Instance GetWfInstance(WF_Step step)
+        {
+            return WF_InstanceService.GetEntities(i => i.DelFlag == DeleteFlag.DelflagNormal && i.ID == step.WF_InstanceID)
+                 .FirstOrDefault();
+        }
+
+        WF_Temp GetWfTemp(WF_Instance instance)
+        {
+            return WF_TempService.GetEntities(t => t.DelFlag == delflagNormal && t.ID == instance.WF_TempID).FirstOrDefault();
+        }
     }
 }
