@@ -84,8 +84,14 @@
             $.extend($.fn.validatebox.defaults.rules, {
                 remarkCheck: {
                     // 验证英语
-                    validator: function(value) {
-                        return (value.trim().indexOf("小锯") >= 0) || (value.trim().indexOf("数控") >= 0);
+                    validator: function (value) {
+                        //                        var b = $('#activityTextBox').value.indexOf("家具") >= 0;
+                        var input_value = $("#activityTextBox").val();
+                        if (input_value.indexOf("家具") >= 0)
+                            return (value.trim().indexOf("小锯") >= 0) || (value.trim().indexOf("数控") >= 0);
+                        else {
+                            return true;
+                        }
                     },
                     message: '请指明小锯或数控'
                 },
@@ -160,6 +166,7 @@
                     <td class="editor-field">
                         @Html.TextBoxFor(model => model.ActityType, new
                         {
+                            id = "activityTextBox",
                             required = true, missingmessage = "必填",
                             @class = "easyui-validatebox",
                             validtype = "activityTypeCheck"
