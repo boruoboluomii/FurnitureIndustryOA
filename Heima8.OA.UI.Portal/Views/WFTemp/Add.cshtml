@@ -1,4 +1,5 @@
-﻿@model Heima8.OA.Model.WF_Temp
+﻿@using Newtonsoft.Json
+@model Heima8.OA.Model.WF_Temp
 
 @{
     Layout = null;
@@ -7,108 +8,173 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Add</title>
-    <link href="~/Content/tableStyle.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery-1.7.1.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/Scripts/jquery.validate.js"></script>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Add</title>
+        <script src="~/Content/jquery-easyui-1.3.1/locale/easyui-lang-zh_CN.js"> </script>
+        <script src="~/Scripts/jquery-1.7.1.js"> </script>
+        <script src="~/Scripts/jquery-1.7.1.min.js"> </script>
 
-    <link href="~/Content/kindeditor-4.0.5/themes/default/default.css" rel="stylesheet" />
-    <script src="~/Content/kindeditor-4.0.5/kindeditor.js"></script>
-    <script src="~/Content/kindeditor-4.0.5/lang/zh_CN.js"></script>
-    <script type="text/javascript">
-        var editor;
-        var editor1;
-        KindEditor.ready(function (K) {
-            editor = K.create('textarea[name="Description"]', {
-                resizeType: 1,
-                allowPreviewEmoticons: false,
-                allowImageUpload: false,
-                items: [
-                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                    'insertunorderedlist', '|', 'emoticons', 'image', 'link']
-            });
-        });
-        
-        KindEditor.ready(function (K) {
-            editor1 = K.create('textarea[name="TempForm"]', {
-                resizeType: 1,
-                allowPreviewEmoticons: false,
-                allowImageUpload: false,
-                items: [
-                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                    'insertunorderedlist', '|', 'emoticons', 'image', 'link']
-            });
-        });
+        <link href="~/Content/jquery-easyui-1.3.1/themes/default/easyui.css" rel="stylesheet" />
+        <link href="~/Content/jquery-easyui-1.3.1/themes/icon.css" rel="stylesheet" />
+        <script src="~/Content/jquery-easyui-1.3.1/jquery-1.8.0.min.js"> </script>
+        <script src="~/Content/jquery-easyui-1.3.1/jquery.easyui.min.js"> </script>
+        <link href="~/Content/tableStyle.css" rel="stylesheet" />
 
-        
-        function afetrAdd(data) {
-            if (data == "ok") {
-                //关闭对话框  刷新表
-                window.parent.window.afterAddByChild();
+        <script src="~/Scripts/jquery.unobtrusive-ajax.js"> </script>
+        <script src="~/Scripts/jquery.validate.min.js"> </script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"> </script>
+        <script src="~/Scripts/jquery.validate.js"> </script>
+        <script src="~/Scripts/MicrosoftAjax.js"> </script>
+        <script src="~/Scripts/MicrosoftMvcValidation.js"> </script>
+
+        <link href="~/Content/kindeditor-4.0.5/themes/default/default.css" rel="stylesheet" />
+        <script src="~/Content/kindeditor-4.0.5/kindeditor.js"> </script>
+        <script src="~/Content/kindeditor-4.0.5/lang/zh_CN.js"> </script>
+        <script type="text/javascript">
+            var editor;
+            var editor1;
+            KindEditor.ready(function(K) {
+                editor = K.create('textarea[name="Description"]', {
+                    resizeType: 1,
+                    allowPreviewEmoticons: false,
+                    allowImageUpload: false,
+                    items: [
+                        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                        'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+                });
+            });
+
+            KindEditor.ready(function(K) {
+                editor1 = K.create('textarea[name="TempForm"]', {
+                    resizeType: 1,
+                    allowPreviewEmoticons: false,
+                    allowImageUpload: false,
+                    items: [
+                        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                        'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+                });
+            });
+            $(function() {
+                $('#ff').form({
+                    onSubmit: function() {
+                        return $(this).form('validate');
+                    },
+                    success: function(data) {
+                        //                            esay ui 的message box
+                        //                            $.messager.alert('Info', data, 'info');
+                        afetrAdd(data);
+                    }
+                });
+
+            });
+
+            function afetrAdd(data) {
+                if (data == "ok") {
+                    $.messager.alert("after add");
+                    //关闭对话框  刷新表
+                    window.parent.window.afterAddByChild();
+                } else {
+                    $.messager.alert('Info', data, 'info');
+                }
             }
-        }
-    </script>
-</head>
-<body>
-    @using (Ajax.BeginForm(new AjaxOptions(){OnSuccess = "afetrAdd"})) {
-        @Html.ValidationSummary(true)
-    
-        <table>
-            <tr>
-                <td>@Html.LabelFor(model => model.TepName,"流程模板名：")</td><td>
-                                                                            @Html.EditorFor(model => model.TepName)
-                                                                            @Html.ValidationMessageFor(model => model.TepName)                                        
-                                                                        </td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(model => model.Description,"流程描述")</td>
-                <td>
-                    <textarea name="Description" style="width:700px;height:80px;visibility:hidden;"></textarea>
 
-                    @Html.ValidationMessageFor(model => model.Description)
-                </td>
-            </tr>
-            <tr>
-    
-                <td class="editor-label">
-                    @Html.LabelFor(model => model.TempForm,"表单模板")
-                </td>
-                <td class="editor-field">
-              
-                    <textarea name="TempForm" style="width:700px;height:80px;visibility:hidden;"></textarea>
-                    @Html.ValidationMessageFor(model => model.TempForm)
-                </td>
-            </tr>
-            <tr>
-                
-            <td class="editor-label">
-                @Html.LabelFor(model => model.Remark,"备注")
-            </td>
-            <td class="editor-field">
-                @Html.EditorFor(model => model.Remark)
-                @Html.ValidationMessageFor(model => model.Remark)
-            </td>
-            </tr>
-            <tr>   <td class="editor-label">
-                @Html.LabelFor(model => model.ActityType,"流程类型")
-            </td>
-            <td class="editor-field">
-                @Html.EditorFor(model => model.ActityType)
-                @Html.ValidationMessageFor(model => model.ActityType)
-            </td></tr>
-            <tr>
-                <td colspan="2">
-                      <input type="submit" value="添加" />
-                </td>
-            </tr>
-        </table>
-    }
-</body>
+            $.extend($.fn.validatebox.defaults.rules, {
+                remarkCheck: {
+                    // 验证英语
+                    validator: function(value) {
+                        return (value.trim().indexOf("小锯") >= 0) || (value.trim().indexOf("数控") >= 0);
+                    },
+                    message: '请指明小锯或数控'
+                },
+                activityTypeCheck: {
+                    // 验证英语
+                    validator: function(value) {
+                        return (value.trim().indexOf("家具") >= 0) || (value.trim().indexOf("productworkflow") >= 0);
+                    },
+                    message: '请指明工作流程类型（例如：家具）'
+                }
+            });
+        </script>
+    </head>
+    <body>
+        @{
+            Html.EnableClientValidation();
+        }
+
+        @using (Ajax.BeginForm("Add", "WFTemp", null, null, new {id = "ff"}))
+        {
+            @Html.ValidationSummary(true)
+
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model => model.TepName, "流程模板名：")</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.TepName, new
+                        {
+                            @class = "easyui-validatebox",
+                            required = true,
+                            missingMessage = "必填",
+                        })
+                        @Html.ValidationMessageFor(model => model.TepName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Description, "流程描述")</td>
+                    <td>
+                        <textarea name="Description" style="width: 700px; height: 80px; visibility: hidden;"></textarea>
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="editor-label">
+                        @Html.LabelFor(model => model.TempForm, "表单模板")
+                    </td>
+                    <td class="editor-field">
+
+                        <textarea name="TempForm" style="width: 700px; height: 80px; visibility: hidden;"></textarea>
+                        @Html.ValidationMessageFor(model => model.TempForm)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label">
+                        @Html.LabelFor(model => model.Remark, "备注")
+                    </td>
+                    <td class="editor-field">
+                        @Html.TextBoxFor(model => model.Remark, new
+                        {
+                            required = true, missingmessage = "必填",
+                            @class = "easyui-validatebox",
+                            validtype = "remarkCheck"
+                        })
+                        @Html.ValidationMessageFor(model => model.Remark)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label">
+                        @Html.LabelFor(model => model.ActityType, "流程类型")
+                    </td>
+                    <td class="editor-field">
+                        @Html.TextBoxFor(model => model.ActityType, new
+                        {
+                            required = true, missingmessage = "必填",
+                            @class = "easyui-validatebox",
+                            validtype = "activityTypeCheck"
+//                                @data_options = "required:true,validType:'remarkCheck'"
+                        })
+                        @Html.ValidationMessageFor(model => model.ActityType)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="添加" />
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </body>
 </html>
