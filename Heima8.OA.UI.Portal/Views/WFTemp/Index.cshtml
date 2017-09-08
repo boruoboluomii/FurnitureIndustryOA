@@ -35,32 +35,32 @@
 
             bindCkbIsMenuClick();
 
-            //绑定  上传图片按钮的点击事件
-            bindUploadBtnClick();
+//            绑定  上传图片按钮的点击事件
+//            bindUploadBtnClick();
 
         });
 
         //绑定一个上传图片的按钮点击事件
-        function bindUploadBtnClick() {
-            $("#btnUploadFile").click(function () {
-                $("#addDialogDiv form").ajaxSubmit({
-                    url: "/ActionInfo/UploadImage",
-                    type: "Post",
-                    success: function (data) {
-                        //把返回的url地址放到页面的隐藏域
-                        $("#MenuIcon").val(data);
-                        $("#uploadImg").html("<img src='" + data + "' style='width:100px;height:100px;' />");
-                    }
-                });
-            });
-        }
-
-        function bindCkbIsMenuClick() {
-            $("#ckbIsMenu").change(function () {
-                //显示或者隐藏那个  图标地址
-                $("#trIconUrl").toggle();
-            });
-        }
+//        function bindUploadBtnClick() {
+//            $("#btnUploadFile").click(function () {
+//                $("#addDialogDiv form").ajaxSubmit({
+//                    url: "/ActionInfo/UploadImage",
+//                    type: "Post",
+//                    success: function (data) {
+//                        //把返回的url地址放到页面的隐藏域
+//                        $("#MenuIcon").val(data);
+//                        $("#uploadImg").html("<img src='" + data + "' style='width:100px;height:100px;' />");
+//                    }
+//                });
+//            });
+//        }
+//
+//        function bindCkbIsMenuClick() {
+//            $("#ckbIsMenu").change(function () {
+//                //显示或者隐藏那个  图标地址
+//                $("#trIconUrl").toggle();
+//            });
+//        }
 
 
 
@@ -79,6 +79,7 @@
                 title: '流程模板信息列表',
                 width: 700,
                 height: 400,
+                marginLeft:50,
                 fitColumns: true,
                 idField: 'ID',
                 loadMsg: '正在加载流程模板的信息...',
@@ -260,6 +261,7 @@
                 minimizable: true,
                 maximizable: true,
                 resizable: true,
+                scrolling:"no",
                 buttons: [{
                     id: 'btnOk',
                     text: '添加',
@@ -303,22 +305,36 @@
 
 
     @*当前页面放表格数据的地方*@
-    <table id="tt" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+    <table id="tt" style="width: 800px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
     </table>
 
     <!----------------弹出来的添加的 对话框- 开始------------>
     <div id="addDialogDiv">
-        <iframe id="addFrame" src="javascript:void(0)" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+        <iframe id="addFrame" src="javascript:void(0)" frameborder="0" width="100%" height="99%" scrolling="yes"></iframe>
     </div>
     <!----------------弹出来的添加的 对话框- 结束------------>
 
 
     <!----------------弹出来的修改的 对话框- 开始------------>
     <div id="editDialogDiv">
-        <iframe id="editFrame" src="javascript:void(0)" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+        <iframe id="editFrame" src="javascript:void(0)" frameborder="0" width="100%" height="99%" scrolling="yes"></iframe>
     </div>
     <!----------------弹出来的修改的 对话框- 结束------------>
 
 
 </body>
 </html>
+@*//获取浏览器显示区域的高度*@
+@*$(window).height();*@
+@*//获取浏览器显示区域的宽度*@
+@*$(window).width();*@
+@**@
+@*//获取页面的文档高度*@
+@*$(document.body).height();*@
+@*//获取页面的文档宽度*@
+@*$(document.body).width();*@
+@**@
+@*//获取滚动条到顶部的垂直高度*@
+@*$(document).scrollTop();*@
+@*//获取滚动条到左边的垂直宽度*@
+@*$(document).scrollLeft(); *@
