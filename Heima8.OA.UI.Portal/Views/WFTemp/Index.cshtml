@@ -280,7 +280,7 @@
 
         //把表单提交到后台。
         function subAddForm() {
-            $("#addDialogDiv form").submit();
+            $("#addFrame")[0].contentWindow.submitForm();
         }
 
         //添加成功过之后执行的代码
