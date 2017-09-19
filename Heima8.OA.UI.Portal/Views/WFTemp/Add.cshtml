@@ -33,7 +33,10 @@
                     items: [
                         'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
                         'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                        'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+                        'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
+                    //                    js提交表单kindeditor编辑器textarea为空解决办法，这行代码的意思就是在textarea失去焦点之后执行this.sync();
+                    //                这个函数就是同步KindEditor的值到textarea文本框。  
+                    afterBlur: function () { this.sync(); }
                 });
             });
 
@@ -45,7 +48,10 @@
                     items: [
                         'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
                         'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                        'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+                        'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
+                    //                    js提交表单kindeditor编辑器textarea为空解决办法，这行代码的意思就是在textarea失去焦点之后执行this.sync();
+                    //                这个函数就是同步KindEditor的值到textarea文本框。  
+                    afterBlur: function () { this.sync(); }
                 });
             });
             $(function() {
