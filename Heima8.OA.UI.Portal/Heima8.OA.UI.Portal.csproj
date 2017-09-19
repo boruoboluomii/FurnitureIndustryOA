@@ -190,6 +190,7 @@
     <Content Include="Content\Images\login\panel-f.gif" />
     <Content Include="Content\Images\login\panel-h.gif" />
     <Content Include="Content\Images\logo.gif" />
+    <Content Include="Content\Images\OAicon.png" />
     <Content Include="Content\JQuery zTree v3.5.12\api\apiCss\api.js" />
     <Content Include="Content\JQuery zTree v3.5.12\api\apiCss\common.css" />
     <Content Include="Content\JQuery zTree v3.5.12\api\apiCss\common_ie6.css" />
