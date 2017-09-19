@@ -76,7 +76,7 @@
                         <p>
                             审批节点：@item.StepName
                             <br />
-@*                            审批人：@{string showName = userInfoService.GetEntities(u => u.ID == item.ProcessBy).FirstOrDefault().ShowName;}*@
+                            @*                            审批人：@{string showName = userInfoService.GetEntities(u => u.ID == item.ProcessBy).FirstOrDefault().ShowName;}*@
                             审批人：@userInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == item.ProcessBy).FirstOrDefault().ShowName
                             <br />
                             审批时间：@item.SubTime
@@ -100,7 +100,7 @@
                 </td>
             </tr>
         </table>
-        <a href="/WFInstence/ShowMyCheck">返回我的审批流程</a>
+        <a href="/WFInstance/ShowMyUnCheck">返回我的审批流程</a>
     </div>
 </body>
 </html>

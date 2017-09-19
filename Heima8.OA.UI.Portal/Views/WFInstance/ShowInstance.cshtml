@@ -18,7 +18,7 @@
         var stempStatus = (short)Heima8.OA.Model.Enum.WFStepEnum.UnProecess;
         IApplicationContext ctx = ContextRegistry.GetContext();
         var userInfoService = ctx.GetObject("UserInfoService") as UserInfoService;
-    }
+        }
 </head>
 <body>
     <div>
@@ -32,7 +32,7 @@
             <tr>
                 <td>申请人：</td><td>
                                  @userInfoService.GetEntities(u => u.DelFlag == DeleteFlag.DelflagNormal && u.ID == Model.StartBy).FirstOrDefault().ShowName
-@*                                 @Model.StartBy*@
+                                 @*                                 @Model.StartBy*@
                              </td>
             </tr>
             <tr>
@@ -57,7 +57,8 @@
             </tr>
              
         </table>
-        <a href="/WFInstence/ShowMyCheck">返回我的审批流程</a>
+        @{var link = "/WFInstance/ShowMyCheck/" + Model.StartBy.ToString();}
+        <a href=@link >返回我的审批流程</a>
     </div>
 </body>
 </html>
