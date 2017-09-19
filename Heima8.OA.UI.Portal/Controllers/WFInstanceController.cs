@@ -103,16 +103,29 @@ namespace Heima8.OA.UI.Portal.Controllers
             instance.WF_TempID = id;
             WF_InstanceService.Add(instance);
             //第二点：启动工作流
-            var role =
-                RoleInfoService.GetEntities(r => r.DelFlag == delflagNormal && r.RoleName.Contains("设计"))
-                    .FirstOrDefault();
+            //1、获得工作流类型
             var temp = GetWfTemp(instance);
             var activity = WorkflowFactory.GetActivity(temp.ActityType);
-            var wfApp = WorkflowApplicationHelper.CreateWorkflowApp(activity, 
+            WorkflowApplication wfApp = null;
+            //2、家具产品对应的逻辑
+            if (activity is ProductFlow)
+            {
+                //家具逻辑中，设计之后数控和小锯是二选一
+                var designRole =
+                RoleInfoService.GetEntities(r => r.DelFlag == delflagNormal && r.RoleName.Contains("设计"))
+                    .FirstOrDefault();
+                string flowToKeyWord = GetRoleHelper.GetFlowToRoleKeyWord(designRole, id);
+                wfApp = WorkflowApplicationHelper.CreateWorkflowApp(activity, 
                 new Dictionary<string, object>()
                 {
-                     {"AfterDesignFlowTo",GetRoleHelper.GetFlowToRoleKeyWord(role ,id)}
+                     {"AfterDesignFlowTo",flowToKeyWord}
                 });
+            }//else if{ 其他工作流的逻辑}
+            else
+            {//没有对应的工作流提前结束
+                return RedirectToAction("ShowMyCheck");
+            }
+            
             instance.WFInstanceId = wfApp.Id;
             WF_InstanceService.Update(instance);
             
